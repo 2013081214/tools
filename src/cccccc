@@ -1,0 +1,25 @@
+<feature ParentId="0" NodeId="1" NodeName="北京铁路局" NodeType="mandatory" >
+  <feature ParentId="1" NodeId="1" NodeName="北京西火车站" NodeType="mandatory">
+    <feature ParentId="1" NodeId="1" NodeName="Line1" NodeType="optional" />
+    <feature ParentId="1" NodeId="2" NodeName="Line2" NodeType="optional" />
+  </feature>
+  <feature ParentId="1" NodeId="16" NodeName="上海火车站" NodeType="mandatory" >
+    <feature ParentId="16" NodeId="17" NodeName="AA" NodeType="mandatory" />
+  </feature>
+  <feature ParentId="1" NodeId="5" NodeName="北京铁路分局" NodeType="optional" >
+    <feature ParentId="5" NodeId="11" NodeName="朝阳火车站" NodeType="mandatory" >
+      <feature ParentId="11" NodeId="18" NodeName="CC" NodeType="mandatory" />
+    </feature>
+  </feature>
+  <feature ParentId="1" NodeId="7" NodeName="成都铁路局" NodeType="mandatory" >
+    <feature ParentId="7" NodeId="8" NodeName="拉萨火车站" NodeType="mandatory" >
+      <feature ParentId="8" NodeId="21" NodeName="日喀则站" NodeType="mandatory" >
+        <feature ParentId="21" NodeId="23" NodeName="EE" NodeType="mandatory" />
+        <feature ParentId="21" NodeId="21" NodeName="DD" NodeType="mandatory" />
+      </feature>
+      <feature ParentId="8" NodeId="22" NodeName="青海火车站" NodeType="optional" >
+        <feature ParentId="22" NodeId="22" NodeName="HH" NodeType="mandatory" />
+      </feature>
+    </feature>
+  </feature>
+</feature>

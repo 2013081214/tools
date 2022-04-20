@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<feature NodeName="Reservoir Management System" NodeType="Multiple"> 
+  <feature NodeName="Member Management" NodeType="mandatory"/>  
+  <feature NodeName="Reservoir status alerts" NodeType="Multiple"> 
+    <feature NodeName="Water Storage" NodeType="mandatory"/>  
+    <feature NodeName="Security" NodeType="mandatory"/>  
+    <feature NodeName="Drain the water" NodeType="mandatory"/> 
+  </feature>  
+  <feature NodeName="Sluice gate management" NodeType="Multiple"> 
+    <feature NodeName="on" NodeType="mandatory"/>  
+    <feature NodeName="off" NodeType="mandatory"/> 
+  </feature>  
+  <feature NodeName="Danger Alert management" NodeType="Multiple"/>
+</feature>

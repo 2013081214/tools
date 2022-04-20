@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Supply ParentId="0" NodeId="1" NodeName="beijing" >
+  <Station ParentId="1" NodeId="1" NodeName="beijingsourth" >
+    <Busbar ParentId="1" NodeId="1" NodeName="Line1" />
+    <Busbar ParentId="1" NodeId="2" NodeName="Line2" />
+  </Station>
+  <Station ParentId="1" NodeId="16" NodeName="shanghai" >
+    <Busbar ParentId="16" NodeId="17" NodeName="AA" />
+  </Station>
+  <Supply ParentId="1" NodeId="5" NodeName="beijing1" >
+    <Station ParentId="5" NodeId="11" NodeName="chaoyang" >
+      <Busbar ParentId="11" NodeId="18" NodeName="CC" />
+    </Station>
+  </Supply>
+  <Supply ParentId="1" NodeId="7" NodeName="chengdu" >
+    <Supply ParentId="7" NodeId="8" NodeName="lasa" >
+      <Station ParentId="8" NodeId="21" NodeName="rikaze" >
+        <Busbar ParentId="21" NodeId="23" NodeName="EE" />
+        <Busbar ParentId="21" NodeId="21" NodeName="DD" />
+      </Station>
+      <Station ParentId="8" NodeId="22" NodeName="qinghai" >
+        <Busbar ParentId="22" NodeId="22" NodeName="HH" />
+      </Station>
+    </Supply>
+  </Supply>
+</Supply>

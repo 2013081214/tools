@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<featureFormalDes> 
+  <feature name="Water Storage"> 
+    <module name="Water Storage"/>  
+    <consts>waterline:nat0;waterInletSpeed:nat0;drainageSpeed:nat0;rainfall:nat0;gate:nat0</consts>  
+    <types>gate=a1,a2,a3,b1,b2,b3,c1,c2</types>  
+    <vars/>  
+    <process name="CloseGate"> 
+      <inputs>waterline;waterInletSpeed;drainageSpeed;rainfal;gate</inputs>  
+      <outputs>waterInletSpeed;drainageSpeed;rainfal;gate;bool</outputs>  
+      <pre/>  
+      <post> 
+        <scenarios> 
+          <C>waterline&lt;20</C>  
+          <D>waterInletSpeed&lt;15</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>waterInletSpeed&lt;20</C>  
+          <D>drainageSpeed&gt;15</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>drainageSpeed&gt;20</C>  
+          <D>rainfall&lt;3</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>rainfall&lt;5</C>  
+          <D>gate&gt;3</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>gate&gt;3</C>  
+          <D>bool</D> 
+        </scenarios> 
+      </post> 
+    </process> 
+  </feature>  
+  <feature name="Security"> 
+    <module name="Security"/>  
+    <consts>waterline:nat0;waterInletSpeed:nat0;drainageSpeed:nat0;rainfall:nat0;gate:nat0</consts>  
+    <types>gate=a1,a2,a3,b1,b2,b3,c1,c2</types>  
+    <vars/>  
+    <process name="Safe"> 
+      <inputs>waterline;waterInletSpeed;drainageSpeed;rainfal;gate</inputs>  
+      <outputs>waterInletSpeed;drainageSpeed;rainfal;gate;bool</outputs>  
+      <pre/>  
+      <post> 
+        <scenarios> 
+          <C>waterline&lt;50</C>  
+          <D>waterInletSpeed&lt;25</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>waterInletSpeed&lt;30</C>  
+          <D>drainageSpeed&gt;25</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>drainageSpeed&lt;40</C>  
+          <D>rainfall&gt;3</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>rainfall&lt;7</C>  
+          <D>gate&gt;3</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>gate&lt;6</C>  
+          <D>bool</D> 
+        </scenarios> 
+      </post> 
+    </process> 
+  </feature>  
+  <feature name="Drain the water"> 
+    <module name="Drain the water"/>  
+    <consts>waterline:nat0;waterInletSpeed:nat0;drainageSpeed:nat0;rainfall:nat0;gate:nat0</consts>  
+    <types>gate=a1,a2,a3,b1,b2,b3,c1,c2</types>  
+    <vars/>  
+    <process name="OpenGate"> 
+      <inputs>waterline;waterInletSpeed;drainageSpeed;rainfal;gate</inputs>  
+      <outputs>waterInletSpeed;drainageSpeed;rainfal;gate;bool</outputs>  
+      <pre/>  
+      <post> 
+        <scenarios> 
+          <C>waterline&gt;50</C>  
+          <D>waterInletSpeed&gt;35</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>waterInletSpeed&lt;60</C>  
+          <D>drainageSpeed&lt;45</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>drainageSpeed&lt;80</C>  
+          <D>rainfall&gt;6</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>rainfall&lt;10</C>  
+          <D>gate&gt;5</D> 
+        </scenarios>  
+        <scenarios> 
+          <C>gate&lt;9</C>  
+          <D>bool</D> 
+        </scenarios> 
+      </post> 
+    </process> 
+  </feature>  
+  <feature name="on"> 
+    <module name="on"/>  
+    <consts/>  
+    <types>gate=a1,a2,a3,b1,b2,b3,c1,c2</types>  
+    <vars/> 
+  </feature>  
+  <feature name="off"> 
+    <module name="off"/>  
+    <consts/>  
+    <types>gate=a1,a2,a3,b1,b2,b3,c1,c2</types>  
+    <vars/> 
+  </feature>  
+  <feature name="Member Management"> 
+    <module name="Member Management"/>  
+    <consts>id:nat0;</consts>  
+    <types>T=a,b,c</types>  
+    <vars>member:set of T</vars>  
+    <process name="Find"> 
+      <inputs>name</inputs>  
+      <outputs>bool</outputs>  
+      <pre/>  
+      <post> 
+        <scenarios> 
+          <C>name inset(member)</C>  
+          <D>bool=hd(T)</D> 
+        </scenarios> 
+      </post> 
+    </process>  
+    <process name="Add"> 
+      <inputs>name</inputs>  
+      <outputs>bool</outputs>  
+      <pre/>  
+      <post> 
+        <scenarios> 
+          <C>memebr=union(member,name)</C>  
+          <D>bool</D> 
+        </scenarios> 
+      </post> 
+    </process>  
+    <process name="Delete"> 
+      <inputs>name</inputs>  
+      <outputs>member</outputs>  
+      <pre/>  
+      <post> 
+        <scenarios> 
+          <C>name inset(member)</C>  
+          <D>member=diff(member,name)</D> 
+        </scenarios> 
+      </post> 
+    </process> 
+  </feature>  
+  <feature name="hongshui"> 
+    <module name="hongshui"/>  
+    <consts>dddd</consts>  
+    <types/>  
+    <vars/> 
+  </feature> 
+</featureFormalDes>
